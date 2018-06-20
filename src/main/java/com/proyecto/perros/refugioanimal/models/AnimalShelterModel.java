@@ -3,12 +3,14 @@ package com.proyecto.perros.refugioanimal.models;
 import java.util.List;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Setter
 @Getter
 @ToString
+@NoArgsConstructor
 public class AnimalShelterModel {
 	public String id;
 
@@ -32,7 +34,6 @@ public class AnimalShelterModel {
 
 	public boolean subscribe;
 
-	public AnimalShelterModel() {
-	}
+	public List<String> images;
 
 }

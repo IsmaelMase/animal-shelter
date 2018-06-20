@@ -16,33 +16,34 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "animalShelters")
-public class AnimalShelter {
+@Document(collection = "animals")
+public class Animal {
+
 	@Id
 	public String id;
 
-	public String identityCode;
-
 	public String name;
 
-	public List<String> emails;
+	public String breed;
 
-	public String province;
+	public String specie;
 
-	public String locality;
+	public String size;
 
-	public String address;
+	public int age;
 
-	public List<String> phones;
+	public String weight;
 
-	public String password;
+	public boolean urgent;
 
-	public String type;
+	public boolean dificult;
 
-	public boolean subscribe;
+	public String data;
 
-	public String website;
+	public String diseases;
 
 	public List<String> images;
+
+	public boolean state;
 
 }

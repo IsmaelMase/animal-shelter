@@ -26,6 +26,7 @@ public class AnimalShelterConverter {
 		shelterModel.password = shelter.password;
 		shelterModel.type = shelter.type;
 		shelterModel.subscribe = shelter.subscribe;
+		shelterModel.images = shelter.images;
 
 		return shelterModel;
 	}
@@ -48,7 +49,7 @@ public class AnimalShelterConverter {
 		shelter.password = shelterModel.password;
 		shelter.type = shelterModel.type;
 		shelter.subscribe = shelterModel.subscribe;
-
+		shelter.images = shelterModel.images;
 		return shelter;
 	}
 }
