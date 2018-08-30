@@ -1,11 +1,7 @@
-package com.proyecto.perros.refugioanimal.entities;
+package com.proyecto.perros.refugioanimal.models;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,11 +11,8 @@ import lombok.ToString;
 @Getter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
-@Document(collection = "animals")
-public class Animal {
+public class AnimalModel {
 
-	@Id
 	public String id;
 
 	public String name;
@@ -47,5 +40,4 @@ public class Animal {
 	public boolean state;
 
 	public boolean subscribe;
-
 }

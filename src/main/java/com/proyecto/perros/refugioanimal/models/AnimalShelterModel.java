@@ -12,6 +12,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class AnimalShelterModel {
+
 	public String id;
 
 	public String identityCode;

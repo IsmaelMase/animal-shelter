@@ -21,7 +21,7 @@ public class AnimalShelterServiceImpl implements AnimalShelterService {
 	private AnimalShelterConverter animalShelterConverter;
 
 	@Autowired
-	private AnimalShelterRespository animalShelterRespository;
+	private AnimalShelterRespository animalShelterRepository;
 
 	// @Autowired
 	// private PasswordEncoder passwordEncoder;
@@ -33,7 +33,7 @@ public class AnimalShelterServiceImpl implements AnimalShelterService {
 			// if (shelter.id.equals("")) {
 			// shelter.password = passwordEncoder.encode(shelter.password);
 			// }
-			AnimalShelter saveShelter = animalShelterRespository
+			AnimalShelter saveShelter = animalShelterRepository
 					.save(animalShelterConverter.convertModelToEntity(shelter));
 
 			return new ResponseEntity<AnimalShelterModel>(animalShelterConverter.converterEntityToModel(saveShelter),
@@ -49,7 +49,7 @@ public class AnimalShelterServiceImpl implements AnimalShelterService {
 	@Override
 	public ResponseEntity<AnimalShelterModel> changeSubscribeShelter(String idShelter) {
 		try {
-			AnimalShelter shelter = animalShelterRespository.findById(idShelter).get();
+			AnimalShelter shelter = animalShelterRepository.findById(idShelter).get();
 			shelter.subscribe = !shelter.subscribe;
 			return subscribeShelter(animalShelterConverter.converterEntityToModel(shelter));
 		} catch (Exception e) {
@@ -63,12 +63,12 @@ public class AnimalShelterServiceImpl implements AnimalShelterService {
 	public ResponseEntity<List<AnimalShelterModel>> findAll() {
 
 		try {
-			ArrayList<AnimalShelterModel> shleltersModel = new ArrayList<>();
-			for (AnimalShelter shelter : animalShelterRespository.findAll()) {
-				shleltersModel.add(animalShelterConverter.converterEntityToModel(shelter));
+			ArrayList<AnimalShelterModel> sheltersModel = new ArrayList<>();
+			for (AnimalShelter shelter : animalShelterRepository.findBySubscribe(true)) {
+				sheltersModel.add(animalShelterConverter.converterEntityToModel(shelter));
 			}
 
-			return new ResponseEntity<List<AnimalShelterModel>>(shleltersModel, HttpStatus.CREATED);
+			return new ResponseEntity<List<AnimalShelterModel>>(sheltersModel, HttpStatus.CREATED);
 
 		} catch (Exception e) {
 
@@ -83,7 +83,7 @@ public class AnimalShelterServiceImpl implements AnimalShelterService {
 		try {
 
 			return new ResponseEntity<AnimalShelterModel>(animalShelterConverter.converterEntityToModel(
-					animalShelterRespository.findByIdentityCode(identityCode)), HttpStatus.CREATED);
+					animalShelterRepository.findByIdentityCode(identityCode)), HttpStatus.CREATED);
 
 		} catch (Exception e) {
 
