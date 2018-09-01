@@ -3,6 +3,7 @@ package com.proyecto.perros.refugioanimal.entities;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -47,5 +48,8 @@ public class Animal {
 	public boolean state;
 
 	public boolean subscribe;
+
+	@DBRef
+	public AnimalShelter animalShelter;
 
 }

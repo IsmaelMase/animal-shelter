@@ -27,6 +27,7 @@ public class AnimalShelterConverter {
 		shelterModel.type = shelter.type;
 		shelterModel.subscribe = shelter.subscribe;
 		shelterModel.images = shelter.images;
+		shelterModel.information = shelter.information;
 
 		return shelterModel;
 	}
@@ -50,6 +51,8 @@ public class AnimalShelterConverter {
 		shelter.type = shelterModel.type;
 		shelter.subscribe = shelterModel.subscribe;
 		shelter.images = shelterModel.images;
+		shelter.information = shelterModel.information;
+
 		return shelter;
 	}
 }

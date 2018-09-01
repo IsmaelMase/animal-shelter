@@ -40,4 +40,6 @@ public class AnimalModel {
 	public boolean state;
 
 	public boolean subscribe;
+
+	public AnimalShelterModel animalShelter;
 }

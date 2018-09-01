@@ -45,4 +45,6 @@ public class AnimalShelter {
 
 	public List<String> images;
 
+	public String information;
+
 }

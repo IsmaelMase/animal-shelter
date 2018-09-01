@@ -1,5 +1,6 @@
 package com.proyecto.perros.refugioanimal.converters;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.proyecto.perros.refugioanimal.entities.Animal;
@@ -7,6 +8,9 @@ import com.proyecto.perros.refugioanimal.models.AnimalModel;
 
 @Component("animalConverter")
 public class AnimalConverter {
+
+	@Autowired
+	private AnimalShelterConverter animalShelterConverter;
 
 	public AnimalModel converterEntityToModel(Animal a) {
 		AnimalModel am = new AnimalModel();
@@ -27,6 +31,7 @@ public class AnimalConverter {
 		am.images = a.images;
 		am.state = a.state;
 		am.subscribe = a.subscribe;
+		am.animalShelter = animalShelterConverter.converterEntityToModel(a.animalShelter);
 
 		return am;
 	}
@@ -50,6 +55,7 @@ public class AnimalConverter {
 		a.images = am.images;
 		a.state = am.state;
 		a.subscribe = am.subscribe;
+		a.animalShelter = animalShelterConverter.convertModelToEntity(am.animalShelter);
 
 		return a;
 	}

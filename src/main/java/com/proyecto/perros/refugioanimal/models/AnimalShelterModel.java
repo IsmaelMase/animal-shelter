@@ -37,4 +37,6 @@ public class AnimalShelterModel {
 
 	public List<String> images;
 
+	public String information;
+
 }
