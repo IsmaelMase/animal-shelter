@@ -18,8 +18,7 @@ public class AnimalShelterConverter {
 			shelterModel.identityCode = shelter.identityCode;
 		}
 		shelterModel.name = shelter.name;
-		shelterModel.province = shelter.province;
-		shelterModel.locality = shelter.locality;
+		shelterModel.address = shelter.address;
 		shelterModel.address = shelter.address;
 		shelterModel.emails = shelter.emails;
 		shelterModel.phones = shelter.phones;
@@ -42,8 +41,7 @@ public class AnimalShelterConverter {
 			shelter.identityCode = shelterModel.identityCode;
 		}
 		shelter.name = shelterModel.name;
-		shelter.province = shelterModel.province;
-		shelter.locality = shelterModel.locality;
+		shelter.address = shelterModel.address;
 		shelter.address = shelterModel.address;
 		shelter.emails = shelterModel.emails;
 		shelter.phones = shelterModel.phones;

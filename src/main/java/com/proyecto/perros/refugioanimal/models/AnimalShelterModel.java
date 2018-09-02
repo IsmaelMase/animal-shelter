@@ -21,11 +21,7 @@ public class AnimalShelterModel {
 
 	public List<String> emails;
 
-	public String province;
-
-	public String locality;
-
-	public String address;
+	public Address address;
 
 	public List<String> phones;
 

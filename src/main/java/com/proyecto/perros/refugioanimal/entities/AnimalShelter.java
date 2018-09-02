@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.proyecto.perros.refugioanimal.models.Address;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,11 +29,7 @@ public class AnimalShelter {
 
 	public List<String> emails;
 
-	public String province;
-
-	public String locality;
-
-	public String address;
+	public Address address;
 
 	public List<String> phones;
 
