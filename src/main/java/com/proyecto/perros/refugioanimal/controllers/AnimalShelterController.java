@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,7 +41,7 @@ public class AnimalShelterController {
 		return animalShelterService.subscribeShelter(shelter);
 	}
 
-	@PutMapping(value = "/changeSubscribeShelter/{id}")
+	@PatchMapping(value = "/changeSubscribeShelter/{id}")
 	public ResponseEntity<AnimalShelterModel> unsubscribeAnimalShelter(@PathVariable("id") String id) {
 		return animalShelterService.changeSubscribeShelter(id);
 	}
