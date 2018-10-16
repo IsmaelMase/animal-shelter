@@ -31,8 +31,9 @@ public class AnimalConverter {
 		am.images = a.images;
 		am.state = a.state;
 		am.subscribe = a.subscribe;
-		am.animalShelter = animalShelterConverter.converterEntityToModel(a.animalShelter);
-
+		if (am.animalShelter != null) {
+			am.animalShelter = animalShelterConverter.converterEntityToModel(a.animalShelter);
+		}
 		return am;
 	}
 
@@ -55,8 +56,9 @@ public class AnimalConverter {
 		a.images = am.images;
 		a.state = am.state;
 		a.subscribe = am.subscribe;
-		a.animalShelter = animalShelterConverter.convertModelToEntity(am.animalShelter);
-
+		if (a.animalShelter != null) {
+			a.animalShelter = animalShelterConverter.convertModelToEntity(am.animalShelter);
+		}
 		return a;
 	}
 
